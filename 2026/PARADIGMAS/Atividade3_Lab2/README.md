@@ -1,3 +1,2 @@
-Ex01:
-!\[Minha imagem](Prints/Ex01.png)
+!\[Ex01:](Prints/Ex01.png)
 
