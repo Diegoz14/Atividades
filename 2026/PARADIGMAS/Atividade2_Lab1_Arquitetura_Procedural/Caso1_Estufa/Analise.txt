@@ -1,0 +1,7 @@
+Análise do Código de Temperatura
+
+O código original apresentava três variáveis globais (temp_c, temp_f, alarme) acessíveis por qualquer parte do sistema, misturando cálculo, mutação de estado e impressão numa única função, sem separação de responsabilidades e sem proteção de escopo.
+
+A refatoração eliminou o estado global, confinando as variáveis ao main. Foram criados dois subprogramas coesos: uma função pura celsius_para_fahrenheit(), que recebe valor por cópia (In Mode) e calcula sem efeitos colaterais, e um procedimento atualizar_alarme(), que recebe o estado por referência (Inout Mode) e tem responsabilidade exclusiva de atualizar o alarme.
+
+Com isso, o sistema passou a ter escopo protegido, coesão por responsabilidade única e acoplamento explícito apenas via parâmetros, tornando cada módulo testável de forma isolada e o código seguro para crescer sem efeitos colaterais indesejados.
