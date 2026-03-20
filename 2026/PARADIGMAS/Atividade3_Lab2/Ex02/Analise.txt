@@ -1,0 +1,11 @@
+Análise Exigida:
+
+Quando altera_falha e chamada, o compilador copia o valor de saldo_bancario 
+para um novo espaco na pilha de memoria destinado ao parametro formal saldo. 
+As duas variaveis tem o mesmo valor no inicio da chamada, 
+mas sao espacos de memoria completamente diferentes. 
+Qualquer modificacao feita em saldo dentro da funcao afeta apenas essa copia local, 
+que e descartada junto com o Stack Frame da funcao ao retornar. 
+Ja altera_correto recebe o endereco de saldo_bancario com o operador &,
+entao o *saldo dentro da funcao aponta diretamente para a memoria original no main,
+e a modificacao persiste apos o retorno.

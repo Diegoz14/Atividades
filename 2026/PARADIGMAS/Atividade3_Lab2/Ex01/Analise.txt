@@ -1,0 +1,13 @@
+Análise Exigida:
+
+A versão recursiva recalcula os mesmos valores várias vezes do zero, 
+pois para calcular `fib(40)` ela precisa de `fib(39)` e `fib(38)`, 
+e para calcular `fib(39)` ela precisa de `fib(38)` novamente, 
+e assim por diante. 
+Isso faz o número de chamadas crescer absurdamente, 
+chegando a 331 milhões para `n=40`, 
+onde cada chamada reserva espaço na pilha de memória para guardar
+seu estado até receber a resposta. 
+A versão iterativa simplesmente percorre o loop 38 vezes somando 
+os dois valores anteriores, sem recalcular nada e sem ocupar a pilha, 
+sendo muito mais rápida e eficiente para valores grandes.
