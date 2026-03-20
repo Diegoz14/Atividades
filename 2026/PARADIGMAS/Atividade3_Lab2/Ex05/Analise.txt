@@ -1,0 +1,3 @@
+Análise Exigida:
+
+No Python toda variável guarda uma referência para um objeto na memória, não o valor em si. Quando estoque é passado para aplicar_desconto_perigoso, o parâmetro precos recebe uma cópia dessa referência, ou seja, os dois nomes apontam para o mesmo objeto na memória. Como listas são mutáveis, a atribuição por índice precos[i] = ... modifica o objeto diretamente onde ele vive, refletindo imediatamente em estoque no main de forma irreversível. A versão segura resolve isso criando um novo objeto independente com precos[:] antes de qualquer modificação, garantindo que a lista original permaneça intacta.

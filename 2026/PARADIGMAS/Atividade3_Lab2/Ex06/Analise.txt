@@ -1,0 +1,4 @@
+Análise Exigida:
+
+O caso base está na linha if item == nome, quando o nome do item atual bate com o arquivo buscado a função retorna imediatamente o caminho encontrado sem abrir nenhuma nova chamada, encerrando a recursão naquele ramo. O segundo caso base implícito é o return "" no final da função, acionado quando os.listdir esgota todos os itens da pasta sem encontrar o arquivo, evitando que a recursão continue indefinidamente em um ramo sem resultado.
+O passo recursivo está na linha if os.path.isdir(caminho_atual), quando o item atual é uma pasta real no disco a função chama a si mesma passando essa subpasta como nova raiz, descendo um nível na árvore de diretórios a cada chamada até atingir um dos casos base.

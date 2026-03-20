@@ -1,0 +1,3 @@
+Análise Exigida: 
+
+Uma sub-rotina tradicional executa do início ao fim em uma única passagem, aloca seu Stack Frame, realiza todo o trabalho e o descarta ao retornar, sem guardar nenhum estado entre chamadas. O gerador funciona de forma cooperativa: ao atingir o yield ele suspende a execução, congela todas as variáveis locais no seu próprio estado interno e devolve o controle ao chamador, mas sem destruir seu Stack Frame. Na próxima chamada via next() ele retoma exatamente da linha seguinte ao yield com todas as variáveis intactas, como se nunca tivesse saído. Isso permite que o chamador e o gerador se alternem no controle da execução de forma controlada, o que seria impossível com uma função tradicional.

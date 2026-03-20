@@ -1,0 +1,3 @@
+Análise Exigida:
+
+Se todos os registros fossem carregados de uma vez em uma lista, um arquivo de log com milhões de linhas ocuparia centenas de megabytes ou gigabytes na RAM simultaneamente, podendo travar ou derrubar o sistema. Com o gerador apenas um registro existe na memória por vez: o next() pede um registro, o gerador produz aquele único registro, entrega e congela. O registro anterior já foi processado e descartado pelo programa principal antes do próximo ser gerado. Isso significa que não importa se o log tem mil ou um bilhão de entradas, o consumo de memória permanece constante durante toda a execução.

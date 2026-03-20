@@ -1,0 +1,3 @@
+Análise:
+
+A variável altitude nasce e vive exclusivamente no main. A função calcular_altitude recebe seu valor por cópia (In Mode), opera sobre o parâmetro formal sem tocar na variável original e retorna a nova altitude, permitindo inspecionar o resultado antes de qualquer comprometimento de estado. O procedimento forcar_altitude demonstra o efeito colateral via referência: ao receber o endereço de altitude com &, o *altitude aponta diretamente para a memória original no main e a mutação é imediata e permanente. A separação entre as duas funções ilustra a diferença fundamental entre calcular sem risco e alterar com intenção declarada.

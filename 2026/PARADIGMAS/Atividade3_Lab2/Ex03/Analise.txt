@@ -1,0 +1,3 @@
+Análise:
+
+O código espaguete repetia o mesmo bloco de lógica três vezes no main, misturando cálculo de bruto, regra de imposto e impressão sem nenhuma separação de responsabilidades, tornando qualquer alteração na regra de negócio um trabalho manual em três lugares diferentes. A refatoração cria calcular_liquido como função pura que recebe todos os valores por cópia (In Mode) e retorna o salário líquido sem efeito colateral, e imprimir_funcionario como procedimento com responsabilidade exclusiva de montar e exibir o resultado de um funcionário. Com isso o main passa a ter apenas três linhas de orquestração, a regra de imposto existe em um único lugar e qualquer mudança nas taxas ou no limite reflete automaticamente para todos os funcionários.
