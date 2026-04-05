@@ -1,0 +1,10 @@
+O Princípio da Substituição de Liskov foi respeitado pois:
+
+- As classes Guerreiro e Mago podem substituir a classe Heroi sem quebrar o comportamento esperado.
+- Ambas mantêm as regras da classe base:
+  - HP nunca fica negativo (uso de max(0, ...))
+  - Não aceitam dano negativo
+- Nenhuma subclasse altera de forma inválida o estado interno herdado.
+- Métodos sobrescritos mantêm o contrato da classe base.
+
+Assim, qualquer objeto Guerreiro ou Mago pode ser usado onde um Heroi é esperado sem causar erros.
